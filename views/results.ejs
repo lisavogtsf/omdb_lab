@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Movie Search Results</title>
+  </head>
+  <body>
+    <h1>Movie Search Results</h1>
+    <ul>
+      <!-- passed {movieList: body} -->
+      <% movieList.forEach(function(movie){ %>
+      <li> <%= movie.Title %> </li>
+      <%  }) %>
+    </ul>
+  </body>
+</html>
+
