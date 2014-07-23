@@ -6,7 +6,16 @@
 
 </head>
 <body>
-  <h1>IMDB ID: <%= movieID %></h1>
+  <h1>Movie Info: </h1>
+  <p><h2><%= movieDetails.Title %></h2></p>
+  <p>(<%= movieDetails.Year %>)</p>
+  <p>Genre: <%= movieDetails.Genre %></p>
+  <p>Plot: <%= movieDetails.Plot %></p>
+  <p>Language: <%= movieDetails.Language %></p>
+  <p>Actors: <%= movieDetails.Actors %></p>
+  <p>Director: <%= movieDetails.Director %></p>
+  <p>Writer: <%= movieDetails.Writer %></p>
+  <p>Awards: <%= movieDetails.Awards %></p>
 
 </body>
 </html>

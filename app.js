@@ -25,9 +25,16 @@ app.get('/search', function(req, res){
 });
 
 app.get('/movie/:id', function(req, res){
-    // need to catch id and redirect to new page
-    var selectedID = req.params.id;
-    res.render("details", {movieID: selectedID});
+  // need to catch id and redirect to new page
+  var selectedID = req.params.id;
+  // res.render("details", {movieID: selectedID});
+  var searchURL = "http://www.omdbapi.com/?i=" + selectedID;
+  request(searchURL, function(error, response, body){
+    if (!error){
+      var data = JSON.parse(body); 
+      res.render("details", {movieDetails: data || []});
+    }
+  });
 });
 
 
