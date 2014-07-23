@@ -9,9 +9,11 @@ var express = require('express'),
 // var favID = ["tt0151625", "tt0372784"];
 var favObjects = [{
   Title: "Monty Python & the Quest for the Holy Grail",
-  imdbID: "tt0151625"}, 
-  {Title: "Batman Begins",
-  imdbID: "tt0372784"}];
+  imdbID: "tt0151625"}
+  // , 
+  // {Title: "Batman Begins",
+  // imdbID: "tt0372784"}
+  ];
 
 app.set("view engine", "ejs");
 

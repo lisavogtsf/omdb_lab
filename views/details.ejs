@@ -9,6 +9,10 @@
   <h1>Movie Info: </h1>
   <h2><%= movieDetails.Title %></h2>
 
+  <!--add something to search the favObjects array and see if the movie is already a favorite -->
+  <!--if yes, indicate that the movie is already a favorite and don't show this button-->
+  <!--eventually include option to un-favorite the item-->
+
   <form method="post" action="/favorites">
     <input type="hidden" name=Title value="<%= movieDetails.Title %>">
     <input type="hidden" name=imdbID value="<%= movieDetails.imdbID %>">
