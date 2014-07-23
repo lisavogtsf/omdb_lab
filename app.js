@@ -2,6 +2,7 @@ var express = require('express'),
   ejs = require('ejs'),
   request = require('request'),
   bodyParser = require('body-parser'),
+  methodOverride = require('method-override'),
   app = express();
 
 // array with IDs of favorite films
@@ -13,6 +14,13 @@ var favObjects = [{
   imdbID: "tt0372784"}];
 
 app.set("view engine", "ejs");
+
+// some middleware for handlign parsing form data
+app.use(bodyParser.urlencoded());
+// add middleware to handle overriding POST requests
+// for both pUT AND DELETE
+app.use(methodOverride("_method"));
+
 
 app.get('/', function(req, res){
   res.render('index.ejs');
@@ -49,15 +57,12 @@ app.get('/favorites', function(req, res){
   res.render("favorites", {favList: favObjects});
 });
 
-// app.post("/books", function(req, res){
-//   console.log(req.body);
-//   count += 1;
-//   // res.send("Livre submitted: " + req.body);
-//   var localBook = req.body.livre;
-//   localBook.id = count;
-//   bookList.push(localBook);
-//   res.redirect("/books");
-// });
+app.post("/favorites", function(req, res){
+  // newFavFilm = req.body;
+  favObjects.push(req.body);
+  console.log(favObjects);
+  res.redirect("/favorites");
+});
 
 
 app.listen(3000);
