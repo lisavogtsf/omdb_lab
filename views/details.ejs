@@ -8,6 +8,13 @@
 <body>
   <h1>Movie Info: </h1>
   <h2><%= movieDetails.Title %></h2>
+
+  <form method="post" action="/favorites">
+  <!--   <input type="hidden" name="favFilm[Title]">
+    <input type="hidden" name="favFilm[imdbID]"> -->
+    <input type="submit" value="mark as favorite">
+  </form>
+
   <ul>
     <li>(<%= movieDetails.Year %>)</li>
     <li>Genre: <%= movieDetails.Genre %></li>
