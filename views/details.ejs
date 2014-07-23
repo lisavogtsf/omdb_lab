@@ -10,8 +10,8 @@
   <h2><%= movieDetails.Title %></h2>
 
   <form method="post" action="/favorites">
-    <input type="text" name=Title value="<%= movieDetails.Title %>">
-    <input type="text" name=imdbID value="<%= movieDetails.imdbID %>">
+    <input type="hidden" name=Title value="<%= movieDetails.Title %>">
+    <input type="hidden" name=imdbID value="<%= movieDetails.imdbID %>">
     <input type="submit" value="mark as favorite">
   </form>
 
