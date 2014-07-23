@@ -7,8 +7,8 @@
     <h1>Movie Search Results</h1>
     <ul>
       <!-- passed {movieList: body} -->
-      <% movieList.forEach(function(movie){ %>
-      <li> <%= movie.Title %> </li>
+      <% movieList.forEach(function(film){ %>
+      <li><a href="movie/<%= film.imdbID %>"> <%= film.Title %> </a></li>
       <%  }) %>
     </ul>
   </body>
