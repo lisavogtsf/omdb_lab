@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Favorite Movies</title>
+  </head>
+  <body>
+    <h1>Favorite Movies</h1>
+    <h2></h2>
+    <ul>
+      <!--  -->
+      <% favList.forEach(function(film){ %>
+      <li><a href="movie/<%= film.imdbID %>"> <%= film.Title %> </a></li>
+      <%  }) %>
+    </ul>
+  </body>
+</html>
+
